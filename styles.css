@@ -1,0 +1,128 @@
+/* Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth; /* Smooth scrolling */
+    }
+
+    body {
+        font-family: 'Dancing Script', cursive;
+        color: rgba(44, 29, 37, 0.8);
+        background-color: rgba(172, 118, 146, 0.8);
+    }
+
+    /* Sticky Nav */
+    nav {
+        position: sticky;
+        top: 0;
+        background: rgba(172, 118, 146, 0.8);
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        backdrop-filter: blur(6px);
+        z-index: 1000;
+        transition: background 0.3s ease;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.2rem;
+        position: relative;
+        transition: color 0.3s ease;
+    }
+
+    /* Button hover underline effect */
+    nav a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 0%;
+        height: 2px;
+        background: gold;
+        transition: width 0.3s ease;
+    }
+
+    nav a:hover {
+        color: gold;
+    }
+
+    nav a:hover::after {
+        width: 100%;
+    }
+
+    /* Parallax Sections */
+    .parallax {
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .parallax h1 {
+        font-size: 3rem;
+        text-shadow: 2px 2px 8px rgba(172, 118, 146, 0.8);
+        animation: fadeInDown 1.2s ease forwards;
+    }
+
+    /* Normal content sections */
+    section {
+        padding: 3rem 1rem;
+        max-width: 900px;
+        margin: auto;
+        background: rgba(172, 118, 146, 0.8);
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(172, 118, 146, 0.8);
+        animation: fadeInUp 1.2s ease forwards;
+    }
+
+    section h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    section p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        text-align: center;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+        nav {
+            flex-direction: column;
+        }
+        .parallax h1 {
+            font-size: 2rem;
+        }
+        section h2 {
+            font-size: 1.6rem;
+        }
+        section p {
+            font-size: 1rem;
+        }
+    }
